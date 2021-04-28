@@ -4,13 +4,21 @@ import './FaceRecognition.css'
 const FaceRecognition = ({imageURL, boxes}) => {
 	return (
 		<div className='center ma pa3 parent'>
-			<img 
-				id='inputImage'
-				alt='image_ur_gonna_see' 
-				src={imageURL}
-				width='500px'
-				height='auto'
+			{
+				imageURL ? 
+				<img 
+					id='inputImage'
+					alt='image_ur_gonna_see' 
+					src={imageURL}
+					width='500px'
+					height='auto'
 				/>
+				:
+				<span
+					className = "white f3"> 
+					Write a URL to detect the face
+				</span>
+			}
 			{boxes.map(box => {
 				return(
 					<div
