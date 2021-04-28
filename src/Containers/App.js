@@ -87,7 +87,7 @@ class App extends Component {
 	onButtonSubmit = (event) => {
 		event.preventDefault();
 		this.setState({imageURL: this.state.input})
-		fetch('http://localhost:3000/imageurl', {
+		fetch('https://arcane-cliffs-73572.herokuapp.com/imageurl', {
 	      method: 'post',
 	      headers: {'Content-Type': 'application/json'},
 	      body: JSON.stringify({
@@ -96,12 +96,12 @@ class App extends Component {
 	    })
 	    .then(res => res.json())
 		.then(response => {
-			console.log(response, 'respuesta recibida')
+			// console.log(response, 'respuesta recibida')
 			if(response){
 			    // i want to increase the amount of entries
 			    // by sending a request to the backend
 			    // im telling that i entered an image
-			    fetch('http://localhost:3000/image', {
+			    fetch('https://arcane-cliffs-73572.herokuapp.com/image', {
 			      method: 'put',
 			      headers: {'Content-Type': 'application/json'},
 			      body: JSON.stringify({
